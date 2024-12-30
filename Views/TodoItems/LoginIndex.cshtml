@@ -1,0 +1,29 @@
+﻿@model ToDoList.Models.AccountViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDoList</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center">Вход или регистрация</h2>
+    <ul class="nav nav-tabs" id="accountTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Вход</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">Регистрация</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="accountTabsContent">
+        <div class="tab-pane fade show active" id="login" role="tabpanel">
+            @await Html.PartialAsync("_LoginPartial", new ToDoList.Models.LoginViewModel()))
+        </div>
+        <div class="tab-pane fade" id="register" role="tabpanel">
+            @await Html.PartialAsync("_RegisterPartial", new ToDoList.Models.RegisterViewModel()))
+        </div>
+    </div>
+</div>
+</body>
+</html>
